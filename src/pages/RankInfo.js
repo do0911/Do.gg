@@ -1,15 +1,15 @@
 import React from "react";
 
-function RankInfo(props) {
+const RankInfo = ({ index, id, point, win, lose }) => {
   return (
     <tr>
-      <th>{props.key}</th>
-      <td>{props.id}</td>
-      <td>{props.point}</td>
-      <td>{props.win}</td>
-      <td>{props.lose}</td>
+      <th>{index}</th>
+      <td>{id}</td>
+      <td>{point}</td>
+      <td>{win}</td>
+      <td>{lose}</td>
     </tr>
   );
-}
+};
 
 export default RankInfo;

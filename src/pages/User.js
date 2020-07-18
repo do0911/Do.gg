@@ -6,18 +6,21 @@ import { Form, Button, Input, FormGroup, Container } from "reactstrap";
 const API_KEY = "RGAPI-3821f6c2-9126-4e8b-985a-c1ce62799092";
 
 export default class User extends Component {
-  state = {
-    isLoaded: false,
-    name: null,
-    tier: null,
-    lpoints: null,
-    win: null,
-    lose: null,
-    most1: null,
-    most2: null,
-    most3: null,
-    matchId: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      name: null,
+      tier: null,
+      lpoints: null,
+      win: null,
+      lose: null,
+      most1: null,
+      most2: null,
+      most3: null,
+      matchId: null,
+    };
+  }
 
   _getUserData() {
     axios

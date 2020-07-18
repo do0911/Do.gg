@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Badge, Container, Row } from "reactstrap";
 
-function UserInfo({
+const UserInfo = ({
   Username,
   Usertier,
   Userrank,
@@ -13,7 +13,7 @@ function UserInfo({
   most1,
   most2,
   most3,
-}) {
+}) => {
   return (
     <Container>
       <Row>
@@ -64,7 +64,7 @@ function UserInfo({
       </Row>
     </Container>
   );
-}
+};
 
 UserInfo.propTypes = {
   Usertier: PropTypes.string.isRequired,

@@ -37,9 +37,9 @@ export default class Rank extends Component {
           </tr>
         </thead>
         <tbody>
-          {data.map((data, index) => (
+          {data.map((data, i) => (
             <RankInfo
-              key={index}
+              index={i + 1}
               id={data.summonerName}
               point={data.leaguePoints}
               win={data.wins}
