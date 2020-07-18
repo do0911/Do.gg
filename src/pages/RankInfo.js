@@ -1,16 +1,15 @@
-import React from 'react';
-import { Table } from 'reactstrap';
+import React from "react";
 
 function RankInfo(props) {
-    return (
+  return (
     <tr>
-    <th>{props.key}</th>
-    <td>{props.id}</td>
-    <td>{props.point}</td>
-    <td>{props.win}</td>
-    <td>{props.lose}</td>
+      <th>{props.key}</th>
+      <td>{props.id}</td>
+      <td>{props.point}</td>
+      <td>{props.win}</td>
+      <td>{props.lose}</td>
     </tr>
-    )
+  );
 }
 
-export default RankInfo
+export default RankInfo;
