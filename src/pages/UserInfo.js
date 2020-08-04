@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Badge, Container, Row } from "reactstrap";
+import { Badge, Row } from "reactstrap";
 
 const UserInfo = ({
   Username,
@@ -15,9 +15,11 @@ const UserInfo = ({
   most3,
 }) => {
   return (
-    <Container>
+    <div>
       <Row>
-        <Badge color="primary">{Username}</Badge>
+        <Badge style={{ margin: "0 auto" }} color="primary">
+          {Username}
+        </Badge>
       </Row>
 
       <Row>
@@ -25,44 +27,49 @@ const UserInfo = ({
           src={require(`../lol-data/emblems/Emblem_${Usertier}.png`)}
           width="100"
           height="100"
+          alt="z"
+          style={{ margin: "0 auto" }}
         />
       </Row>
 
       <Row>
-        <Badge color="primary">
+        <Badge color="primary" style={{ margin: "0 auto" }}>
           {Usertier} {Userrank} {Userlpoints}
         </Badge>
       </Row>
 
-      <Row>
+      <Row style={{ width: "86px", margin: "0 auto" }}>
         <Badge color="primary">{Userwin} W </Badge>
         <Badge color="danger">{Userlose} L</Badge>
       </Row>
 
       <Row>
-        <Badge color="primary">Rate {Userrate.toFixed(2)}%</Badge>
+        <Badge color="primary" style={{ margin: "0 auto" }}>
+          Rate {Userrate.toFixed(2)}%
+        </Badge>
       </Row>
 
-      <Row>
-        <div>
-          <img
-            src={require(`../lol-data/img/champion/${most1}.png`)}
-            width="60"
-            height="60"
-          />
-          <img
-            src={require(`../lol-data/img/champion/${most2}.png`)}
-            width="60"
-            height="60"
-          />
-          <img
-            src={require(`../lol-data/img/champion/${most3}.png`)}
-            width="60"
-            height="60"
-          />
-        </div>
+      <Row style={{ width: "180px", margin: "30px auto" }}>
+        <img
+          src={require(`../lol-data/img/champion/${most1}.png`)}
+          width="60"
+          height="60"
+          alt="z"
+        />
+        <img
+          src={require(`../lol-data/img/champion/${most2}.png`)}
+          width="60"
+          height="60"
+          alt="z"
+        />
+        <img
+          src={require(`../lol-data/img/champion/${most3}.png`)}
+          width="60"
+          height="60"
+          alt="z"
+        />
       </Row>
-    </Container>
+    </div>
   );
 };
 

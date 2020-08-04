@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import UserInfo from "./UserInfo";
 import axios from "axios";
-import { Form, Button, Input, FormGroup, Container } from "reactstrap";
+import { Form, Button, Input, FormGroup } from "reactstrap";
 
 const API_KEY = "RGAPI-3821f6c2-9126-4e8b-985a-c1ce62799092";
 
@@ -76,13 +76,14 @@ export default class User extends Component {
   };
 
   handleSubmit = (e) => {
-    const { id } = this.state;
     e.preventDefault();
     this.setState({
       id: e.target.value,
     });
     this._getUserData();
   };
+
+  s;
 
   render() {
     const {
@@ -97,10 +98,13 @@ export default class User extends Component {
       most2,
       most3,
     } = this.state;
-
     return (
-      <Container>
-        <Form inline onSubmit={this.handleSubmit}>
+      <div>
+        <Form
+          style={{ width: "258px", margin: "30px auto" }}
+          inline
+          onSubmit={this.handleSubmit}
+        >
           <FormGroup>
             <Input placeholder="이름" name="id" onChange={this.handleChange} />
           </FormGroup>
@@ -108,7 +112,7 @@ export default class User extends Component {
             <Button color="primary">검색</Button>
           </FormGroup>
         </Form>
-        {isLoaded ? (
+        {isLoaded && (
           <UserInfo
             Username={name}
             Usertier={tier}
@@ -121,10 +125,8 @@ export default class User extends Component {
             most2={most2}
             most3={most3}
           />
-        ) : (
-          <div>Loading</div>
         )}
-      </Container>
+      </div>
     );
   }
 }
